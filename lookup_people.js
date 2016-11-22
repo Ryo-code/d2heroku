@@ -17,8 +17,10 @@ client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
   }
-  let string = `SELECT * FROM famous_people WHERE last_name = '${person}' OR first_name = '${person}'`
-  client.query(string, [], (err, result) => {
+  let string = `SELECT * FROM famous_people
+  WHERE last_name = $1 OR first_name = $1`
+  //since "person" is this argv array below, you can access it with "$1", as seen above (so hypothetically, you could make another item in the array and access it with $2)
+  client.query(string, [person], (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
