@@ -1,5 +1,5 @@
 const pg = require("pg");
-const settings = require("./settings"); // settings.json
+const settings = require("./settings"); // refers to settings.json
 const person = process.argv[2]
 
 const client = new pg.Client({
