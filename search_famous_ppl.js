@@ -24,7 +24,7 @@ knex
     const FullSentence = `- ${id}: ${firstName} ${lastName}, born '${birthday}'`
 
     console.log(FullSentence);
-    
+
   })
   .catch((err)=> {
     console.log("REJ-ECT-EEDDDDDD!");
